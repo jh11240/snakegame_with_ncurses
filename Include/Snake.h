@@ -31,7 +31,7 @@ private:
     pair<int,int> tmpTail;
     bool isDead;
     pair<int,int> mapSize;
-    friend class SnakeGame;
+
 };
 
 #endif
