@@ -53,6 +53,12 @@ void Snake::Move(char ch){
         Move(direction);
         return;
     }
+
+    //뒤로가면 죽음
+    if(tmpPoint==prevHead) Die();
+    //매 움직임마다 충돌처리매니저의 map값 갱신시키는것보단 나아보임
+    if(IsSnakeBody(tmpPoint)) Die();
+
     snakeBody.push_front(tmpPoint);
     tmpTail=snakeBody.back();
     snakeBody.pop_back();
@@ -71,4 +77,11 @@ void Snake::Extend(){
 }
 bool Snake::IsDead(){
     return isDead;
+}
+
+bool Snake::IsSnakeBody(pair<int,int> coordinate){
+    if(find(snakeBody.begin(),snakeBody.end(),coordinate)!=snakeBody.end()){
+        return true;
+    }
+    return false;
 }

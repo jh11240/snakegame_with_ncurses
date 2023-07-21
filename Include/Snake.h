@@ -21,6 +21,7 @@ public:
     void Shrink();
     void Extend();
     bool IsDead();
+     bool IsSnakeBody(pair<int,int> coordinate);
     void Die();
 
 private:
@@ -30,8 +31,6 @@ private:
     char direction;
     pair<int,int> tmpTail;
     bool isDead;
-    pair<int,int> mapSize;
-
 };
 
 #endif
