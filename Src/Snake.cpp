@@ -3,20 +3,25 @@
 using namespace std;
 
 Snake::Snake(){
+    snakeBody.clear();
     snakeBody.push_back({5,5});
     snakeBody.push_back({6,5});
     snakeBody.push_back({7,5 });
     curHead=make_pair(5,5);
+    prevHead=make_pair(0,0);
     direction='U';
 }
 
 /// @brief StartNode가 뱀의 head가 되어서 head부터 오른쪽으로 3가지 노드로 구성
 /// @param StartNode 
 Snake::Snake(pair<int,int> StartNode){
+    snakeBody.clear();
     snakeBody.push_back(StartNode);
     snakeBody.push_back((pair<int,int>){StartNode.first+1, StartNode.second});
     snakeBody.push_back((pair<int,int>){StartNode.first +2,StartNode.second});
     curHead=StartNode;
+    //절대 startNode가 될수없는 좌표
+    prevHead=make_pair(999999,99999);
     direction='U';
 }
 Snake::~Snake(){
