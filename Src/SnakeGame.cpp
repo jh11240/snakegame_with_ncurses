@@ -14,7 +14,7 @@ SnakeGame::SnakeGame(){
     gate= new Gate(drawableObjects,make_pair(2,0),make_pair(3,20));
     drawableObjects.push_back(static_cast<IDraw*>( player));
 }
-SnakeGame::SnakeGame(pair<int,int> startPoint):colMgr(CollisionManager::GetInstance()){
+SnakeGame::SnakeGame(pair<int,int> startPoint){
     gameDelay=1;
     player= new Snake(startPoint);
     entireBoard=new Board(drawableObjects,false);
