@@ -10,9 +10,8 @@
 class Board
 {
 public:
-    Board();
     Board(vector<IDraw*>& drawableObjects,bool ifMapExist);
-    void AddWall(int x,int y);
+    void AddWall(vector<IDraw*>& drawableObjects,int x,int y);
 private:
     CollisionManager& colMgr=CollisionManager::GetInstance();
     vector<Wall*> entireBoard;
