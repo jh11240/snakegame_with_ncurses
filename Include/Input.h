@@ -1,3 +1,5 @@
+#ifndef _Input_H
+#define _Input_H
 #include <ncurses.h>
 
 char getInput()
@@ -27,3 +29,5 @@ char getInput()
     }
     return retCh;
 }
+
+#endif
