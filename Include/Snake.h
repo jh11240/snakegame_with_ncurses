@@ -1,6 +1,7 @@
 #ifndef _Snake_H
 #define _Snake_H
 #include "IDraw.h"
+#include "algorithm"
 
 #include<deque>
 using namespace std;
